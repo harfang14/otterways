@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Architecture/ObjectIntercation/Dirty.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Architecture/ObjectIntercation/Done.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/Area2D.cs" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32.255, 32.0367 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "dirty",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "done",
+"speed": 5.0
+} ]
+
+[node name="ItemWash" type="StaticBody2D"]
+position = Vector2( 474.321, 224.863 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Area2D"]
+frames = SubResource( 2 )
+animation = "dirty"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PoolVector2Array( -10.2498, -33.854, 11.6032, -34.0044, 33.4784, -6.54831, 33.2745, 10.376, 11.0487, 33.6213, -9.342, 33.6213, -33.403, 10.5799, -33.403, -5.52877 )

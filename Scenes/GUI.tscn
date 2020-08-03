@@ -1,0 +1,184 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Assets/Architecture/GuiAssets/trash.png" type="Texture" id=1]
+[ext_resource path="res://Assets/fonts/Comfortaa-Bold.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/Architecture/GuiAssets/wash.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Architecture/GuiAssets/broom.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Architecture/ObjectIntercation/Other.png" type="Texture" id=5]
+[ext_resource path="res://Scripts/GUI.cs" type="Script" id=6]
+[ext_resource path="res://Scenes/WashNumber.cs" type="Script" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[node name="GUI" type="MarginContainer"]
+anchor_right = 1.0
+margin_bottom = 40.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 1004.0
+margin_bottom = 85.0
+
+[node name="Tasks" type="HBoxContainer" parent="HBoxContainer"]
+margin_right = 880.0
+margin_bottom = 65.0
+size_flags_horizontal = 3
+
+[node name="Task" type="HBoxContainer" parent="HBoxContainer/Tasks"]
+margin_right = 308.0
+margin_bottom = 65.0
+
+[node name="Count" type="MarginContainer" parent="HBoxContainer/Tasks/Task"]
+margin_right = 100.0
+margin_bottom = 65.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="HBoxContainer/Tasks/Task/Count"]
+margin_right = 100.0
+margin_bottom = 65.0
+rect_min_size = Vector2( 100, 65 )
+
+[node name="WashLabel" type="Label" parent="HBoxContainer/Tasks/Task/Count/NinePatchRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "10"
+valign = 1
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Wash" type="TextureRect" parent="HBoxContainer/Tasks/Task/Count/NinePatchRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -32.0
+margin_top = -32.0
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 3 )
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Count2" type="MarginContainer" parent="HBoxContainer/Tasks/Task"]
+margin_left = 104.0
+margin_right = 204.0
+margin_bottom = 65.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="HBoxContainer/Tasks/Task/Count2"]
+margin_right = 100.0
+margin_bottom = 65.0
+rect_min_size = Vector2( 100, 65 )
+
+[node name="BroomLabel" type="Label" parent="HBoxContainer/Tasks/Task/Count2/NinePatchRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "10"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="broom" type="TextureRect" parent="HBoxContainer/Tasks/Task/Count2/NinePatchRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -32.0
+margin_top = -32.0
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 4 )
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Count3" type="MarginContainer" parent="HBoxContainer/Tasks/Task"]
+margin_left = 208.0
+margin_right = 308.0
+margin_bottom = 65.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="HBoxContainer/Tasks/Task/Count3"]
+margin_right = 100.0
+margin_bottom = 65.0
+rect_min_size = Vector2( 100, 65 )
+
+[node name="trashLabel" type="Label" parent="HBoxContainer/Tasks/Task/Count3/NinePatchRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "10"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="trash" type="TextureRect" parent="HBoxContainer/Tasks/Task/Count3/NinePatchRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -29.8184
+margin_top = -34.7474
+margin_right = 34.1816
+margin_bottom = 29.2526
+texture = ExtResource( 1 )
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="HBoxContainer" parent="HBoxContainer"]
+margin_left = 884.0
+margin_right = 984.0
+margin_bottom = 65.0
+
+[node name="Task" type="HBoxContainer" parent="HBoxContainer/Timer"]
+margin_right = 100.0
+margin_bottom = 65.0
+
+[node name="Count" type="MarginContainer" parent="HBoxContainer/Timer/Task"]
+margin_right = 100.0
+margin_bottom = 65.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="HBoxContainer/Timer/Task/Count"]
+margin_right = 100.0
+margin_bottom = 65.0
+rect_min_size = Vector2( 100, 65 )
+
+[node name="Timer" type="Timer" parent="HBoxContainer/Timer/Task/Count/NinePatchRect"]
+
+[node name="Wash" type="TextureRect" parent="HBoxContainer/Timer/Task/Count/NinePatchRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -33.7581
+margin_top = -33.7581
+margin_right = 30.2419
+margin_bottom = 30.2419
+texture = ExtResource( 5 )
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
